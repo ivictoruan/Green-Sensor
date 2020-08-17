@@ -1,0 +1,37 @@
+{% extends "model-page.html" %}
+{% block style %}
+<style>
+    .polaroid{
+        width: 350px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+        background: #37b82f linear-gradient(lightseagreen, lawngreen);
+        text-align: center;
+    }
+    .container{
+        padding: 4px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+
+
+<div class="container mb-4">
+    <div class="row">
+        {% for b in buildings %}
+        <div class="col-sm-6">
+            <div class="polaroid" >
+                <img src="{{ b.photo.url }}" style="width:100%">
+                     <div class="container">
+                         <p>{{ b.name }}</p>
+                         <p>Números de Dispositivos:{{ b.number_devices }}</p>
+                     </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
